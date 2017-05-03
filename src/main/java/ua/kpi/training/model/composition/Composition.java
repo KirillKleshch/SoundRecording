@@ -1,5 +1,7 @@
 package ua.kpi.training.model.composition;
 
+import ua.kpi.training.view.DefaultMessages;
+
 /**
  * Created by Kirill on 02.05.2017.
  */
@@ -8,7 +10,7 @@ abstract public class Composition {
     private Style style;
     private int size;
 
-    Composition(int duration, Style style, int size) {
+    Composition(Style style, int duration, int size) {
         this.duration = duration;
         this.style = style;
         this.size = size;
@@ -24,5 +26,9 @@ abstract public class Composition {
 
     public int getSize() {
         return size;
+    }
+
+    public String atributeToSting(){
+        return null;
     }
 }
