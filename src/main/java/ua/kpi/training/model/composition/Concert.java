@@ -9,8 +9,8 @@ public class Concert extends Composition {
     private Date dateConcert;
     private String musicBandName;
 
-    Concert(int duration, Style style, int size, Date dateConcert, String musicBandName) {
-        super(duration, style, size);
+    Concert(Style style, int duration, int size, Date dateConcert, String musicBandName) {
+        super(style, duration, size);
         this.dateConcert = dateConcert;
         this.musicBandName = musicBandName;
     }
