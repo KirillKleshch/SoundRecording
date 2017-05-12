@@ -28,7 +28,7 @@ abstract public class Composition {
         return size;
     }
 
-    public String atributeToSting(){
+    public String atributeToSting() {
         return null;
     }
 }
