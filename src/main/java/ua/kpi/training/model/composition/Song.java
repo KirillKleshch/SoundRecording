@@ -11,8 +11,8 @@ public class Song extends Composition {
     private int yearOfWriting;
     private String[] lyrics;
 
-    public Song(String nameOfSong, Style style,int duration, int size, String artistName, int yearOfWriting) {
-        super(style,duration, size);
+    public Song(String nameOfSong, Style style, int duration, int size, String artistName, int yearOfWriting) {
+        super(style, duration, size);
         this.nameOfSong = nameOfSong;
         this.artistName = artistName;
         this.yearOfWriting = yearOfWriting;
@@ -39,9 +39,10 @@ public class Song extends Composition {
     }
 
     @Override
-    public String atributeToSting(){
+    public String atributeToSting() {
         StringBuilder builder = new StringBuilder();
-        builder.append(nameOfSong).append(DefaultMessages.SPACE)
+        builder.append(this.getClass().getSimpleName()).append(DefaultMessages.SPACE)
+                .append(nameOfSong).append(DefaultMessages.SPACE)
                 .append(getStyle()).append(DefaultMessages.SPACE)
                 .append(getDuration()).append(DefaultMessages.SPACE)
                 .append(getSize()).append(DefaultMessages.SPACE)
