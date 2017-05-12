@@ -1,5 +1,6 @@
 package ua.kpi.training.controller;
 
+import ua.kpi.training.view.DefaultMessages;
 import ua.kpi.training.view.View;
 
 import java.util.Scanner;
@@ -10,25 +11,36 @@ import java.util.regex.Pattern;
  */
 public class Utility {
     private Scanner scanner;
-    private View view;
 
-    public Utility(Scanner scanner, View view) {
+    public Utility(Scanner scanner) {
         this.scanner = scanner;
-        this.view = view;
     }
 
-    public int getInt(String regExp){
+    public int getInt(String regExp) {
         int number = 0;
         String input;
-        while(scanner.hasNextLine()) {
+        while (scanner.hasNextLine()) {
             input = scanner.nextLine();
-            if (Pattern.matches(regExp, input)){
+            if (Pattern.matches(regExp, input)) {
                 number = Integer.parseInt(input);
                 break;
             } else {
-                //view.printError();
+                View.printMessage(DefaultMessages.ERROR);
             }
         }
         return number;
+    }
+
+    public String getString(String regExp) {
+        String input = "";
+        while (scanner.hasNextLine()) {
+            input = scanner.nextLine();
+            if (Pattern.matches(regExp, input)) {
+                break;
+            } else {
+                View.printMessage(DefaultMessages.ERROR);
+            }
+        }
+        return input;
     }
 }
